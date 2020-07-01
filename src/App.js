@@ -40,11 +40,16 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1> Monsters Rolodex </h1>
         <SearchBox 
           placeholder='search monsters' 
           handleChange={this.handleChange}
         />
-        <CardList monsters={filteredMonsters} />
+
+        { filteredMonsters.length !== 0 ? 
+          (<CardList monsters={filteredMonsters} />) : ( <h1> No Search Results Found</h1> )
+        }
+
       </div>
     )
   }
